@@ -1,8 +1,12 @@
 {
   "manifest_version": 2,
-  "name": "My chrome extension",
+  "name": "Linscraper",
   "version": "1.0.0",
   "permissions": ["tabs", "activeTab", "storage"],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
   "content_scripts": [
     {
       "js": ["contentscript.js"],
@@ -10,14 +14,10 @@
       "matches": ["<all_urls>"]
     }
   ],
-  "background": {
-    "scripts": ["background.js"],
-    "persistent": false
-  },
   "web_accessible_resources": ["assets/*"],
   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
   "browser_action": {
     "default_popup": "popup/index.html",
-    "default_title": "React Chrome Extension Starter"
+    "default_title": "Linscraper"
   }
 }
